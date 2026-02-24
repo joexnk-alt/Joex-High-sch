@@ -2,19 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOEX FOUNDATION - Portal</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; background-color: #f9f9f9; }
-        table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        th, td { border: 1px solid #eee; padding: 15px; text-align: left; }
-        th { background-color: #2c3e50; color: white; }
-        tr:nth-child(even) { background-color: #f2f2f2; }
-        img { border-radius: 4px; vertical-align: middle; margin-right: 10px; }
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --light: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        #header-container {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden; /* Keeps corners rounded */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+            text-align: left;
+            padding: 15px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f7ff;
+            transition: 0.3s;
+        }
+
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            background: #e1f5fe;
+            color: #01579b;
+        }
     </style>
 </head>
 <body>
 
-    <div id="header-container"></div>
+    <div id="header-container">
+        <h1>JOEX FOUNDATION</h1>
+        <p>Activity Management Portal</p>
+    </div>
 
     <table>
         <thead>
@@ -23,13 +85,26 @@
                 <th>Activity Name</th>
                 <th>Category</th>
                 <th>Coach</th>
-                <th>Foundation</th>
+                <th>Status</th>
             </tr>
         </thead>
-        <tbody id="activities-table-body">
-            </tbody>
+        <tbody>
+            <tr>
+                <td>#1001</td>
+                <td>Community Outreach</td>
+                <td>Social Work</td>
+                <td>Coach Jackson</td>
+                <td><span class="status-badge">Active</span></td>
+            </tr>
+            <tr>
+                <td>#1002</td>
+                <td>Youth Soccer Clinic</td>
+                <td>Sports</td>
+                <td>Coach Sarah</td>
+                <td><span class="status-badge">Pending</span></td>
+            </tr>
+        </tbody>
     </table>
 
-    <script src="script.js"></script>
 </body>
 </html>
